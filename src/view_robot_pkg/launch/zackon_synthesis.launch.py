@@ -54,7 +54,7 @@ def generate_launch_description():
 
     # 3.2 Node Odom
     odom_node = Node(
-        package='view_robot_pkg',
+        package='node_pkg',
         executable='odom_tf_broadcaster',
         name='odom_tf_broadcaster',
         output='screen'
