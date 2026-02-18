@@ -8,7 +8,7 @@ from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue 
 #File danh cho mo phong Gazebo
 def generate_launch_description():
-    pkg_name = 'view_robot_pkg' 
+    pkg_name = 'node_pkg' 
     pkg_share = get_package_share_directory(pkg_name)
 
     # Cấu hình đường dẫn Meshes

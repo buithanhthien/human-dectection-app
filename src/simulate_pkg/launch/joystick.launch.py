@@ -19,7 +19,7 @@ def generate_launch_description():
 
     # external_joy
     joy_teleop_node = Node(
-        package='view_robot_pkg',     # Tên package phụ của bạn
+        package='node_pkg',     # Tên package phụ của bạn
         executable='my_teleop_node',    # Tên lệnh (phải khớp với console_scripts trong setup.py)
         name='my_joy_teleop_node',
         output='screen',

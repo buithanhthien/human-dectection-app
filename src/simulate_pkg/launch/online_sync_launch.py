@@ -33,7 +33,7 @@ def generate_launch_description():
         description='Use simulation/Gazebo clock')
     declare_slam_params_file_cmd = DeclareLaunchArgument(
         'slam_params_file',
-        default_value=os.path.join(get_package_share_directory("view_robot_pkg"),
+        default_value=os.path.join(get_package_share_directory("node_pkg"),
                                    'config', 'mapper_params_online_sync.yaml'),
         description='Full path to the ROS2 parameters file to use for the view_robot_pkg node')
 
@@ -45,9 +45,9 @@ def generate_launch_description():
             'use_sim_time': use_sim_time
           }
         ],
-        package='view_robot_pkg',
+        package='node_pkg',
         executable='sync_view_robot_pkg_node',
-        name='view_robot_pkg',
+        name='node_pkg',
         output='screen',
         namespace=''
     )

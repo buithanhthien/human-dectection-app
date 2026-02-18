@@ -10,7 +10,7 @@ def generate_launch_description():
     # ----------------------------------------------------
     # 1. INIT PACKAGE & DIRECTORIES
     # ----------------------------------------------------
-    PACKAGE_NAME = 'view_robot_pkg' 
+    PACKAGE_NAME = 'node_pkg' 
     pkg_dir = get_package_share_directory(PACKAGE_NAME)
     slam_dir = get_package_share_directory('slam_toolbox')
     sllidar_dir = get_package_share_directory('sllidar_ros2')

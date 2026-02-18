@@ -7,7 +7,7 @@ from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    pkg = get_package_share_directory('view_robot_pkg') # Đổi tên package của bạn nếu khác
+    pkg = get_package_share_directory('node_pkg') # Đổi tên package của bạn nếu khác
 
     # 1. Arguments
     use_sim_time = LaunchConfiguration('use_sim_time')
