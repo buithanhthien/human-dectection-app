@@ -1,0 +1,6 @@
+.venv
+.vscode
+.kiro
+logs
+app/perception/__pycache__/*
+app/core/__pycache__/*
