@@ -26,3 +26,4 @@ app/core/__pycache__/*
 
 # Test results
 **/test_results/
+require.txt
