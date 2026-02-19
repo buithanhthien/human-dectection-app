@@ -77,11 +77,22 @@ def generate_launch_description():
     )
     # ===================================
 
+    localization = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(pkg_share, 'launch', 'zackon_localization.launch.py')
+        ),
+        launch_arguments={
+            'use_sim_time': 'true',
+            'map': os.path.join(pkg_share, 'maps', 'turtlebot3_world.yaml')
+        }.items()
+    )
+
     return LaunchDescription([
         set_env_vars,
         node_robot_state_publisher,
         gazebo,
         spawn_entity,
         bridge,
-        joystick  
+        joystick,
+        localization
     ])

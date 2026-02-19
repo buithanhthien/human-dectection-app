@@ -1,0 +1,10 @@
+I am now having a problem when launch launch_sim.launch.py:
+
+```
+(.venv) thien@thien-ThinkPad-X1-Carbon-7th:~/human_detection_app$ ros2 launch node_pkg launch_sim.launch.py
+[INFO] [launch]: All log files can be found below /home/thien/.ros/log/2026-02-19-16-43-50-561333-thien-ThinkPad-X1-Carbon-7th-4922
+[INFO] [launch]: Default logging verbosity is set to INFO
+[ERROR] [launch]: Caught exception in launch (see debug for traceback): No module named 'nav2_common'
+```
+
+Could you troubleshoot the problem and fix it?
