@@ -3,7 +3,7 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="view_robot_pkg">
+  name="node_pkg">
 
   <link name="base_footprint">
   </link>
@@ -37,7 +37,7 @@
         <!-- initial rpy="0 0 0"-->
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/base_link.STL" />
+          filename="package://node_pkg/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -52,7 +52,7 @@
         <!-- initial rpy="0 0 0"-->
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/base_link.STL" />
+          filename="package://node_pkg/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -78,7 +78,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/leftwheel_Link.STL" />
+          filename="package://node_pkg/meshes/leftwheel_Link.STL" />
       </geometry>
       <material
         name="">
@@ -92,7 +92,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/leftwheel_Link.STL" />
+          filename="package://node_pkg/meshes/leftwheel_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -134,7 +134,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/rightwheel_Link.STL" />
+          filename="package://node_pkg/meshes/rightwheel_Link.STL" />
       </geometry>
       <material
         name="">
@@ -148,7 +148,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/rightwheel_Link.STL" />
+          filename="package://node_pkg/meshes/rightwheel_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -190,7 +190,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/left_casterwheel_before_Link.STL" />
+          filename="package://node_pkg/meshes/left_casterwheel_before_Link.STL" />
       </geometry>
       <material
         name="">
@@ -204,7 +204,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/left_casterwheel_before_Link.STL" />
+          filename="package://node_pkg/meshes/left_casterwheel_before_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -246,7 +246,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/left_casterwheel_after_Link.STL" />
+          filename="package://node_pkg/meshes/left_casterwheel_after_Link.STL" />
       </geometry>
       <material
         name="">
@@ -260,7 +260,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/left_casterwheel_after_Link.STL" />
+          filename="package://node_pkg/meshes/left_casterwheel_after_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -302,7 +302,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/right_casterwheel_before_Link.STL" />
+          filename="package://node_pkg/meshes/right_casterwheel_before_Link.STL" />
       </geometry>
       <material
         name="">
@@ -316,7 +316,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/right_casterwheel_before_Link.STL" />
+          filename="package://node_pkg/meshes/right_casterwheel_before_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -358,8 +358,8 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/right_casterwheel_after_Link.STL" />
-      </geometry>00970082884711942
+          filename="package://node_pkg/meshes/right_casterwheel_after_Link.STL" />
+      </geometry>
       <material
         name="">
         <color
@@ -372,7 +372,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/right_casterwheel_after_Link.STL" />
+          filename="package://node_pkg/meshes/right_casterwheel_after_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -416,7 +416,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/lidar_Link.STL" />
+          filename="package://node_pkg/meshes/lidar_Link.STL" />
       </geometry>
       <material
         name="">
@@ -430,7 +430,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://view_robot_pkg/meshes/lidar_Link.STL" />
+          filename="package://node_pkg/meshes/lidar_Link.STL" />
       </geometry>
     </collision>
   </link>
@@ -453,7 +453,7 @@
       damping="0.1"
       friction="0.1" />
   </joint>
-  <!-- 
+  
   <gazebo reference="right_casterwheel_before_Link">
     <material>Gazebo/Blue</material>
     <mu1 value="0.001"/>
@@ -565,5 +565,5 @@
           <gz_frame_id>lidar_link</gz_frame_id>
       </sensor>
   </gazebo> 
--->
+
 </robot>

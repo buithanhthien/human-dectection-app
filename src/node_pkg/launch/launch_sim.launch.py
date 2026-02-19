@@ -11,7 +11,6 @@ def generate_launch_description():
     pkg_name = 'node_pkg' 
     pkg_share = get_package_share_directory(pkg_name)
 
-    # Cấu hình đường dẫn Meshes
     set_env_vars = AppendEnvironmentVariable(
         'GZ_SIM_RESOURCE_PATH',
         os.path.join(pkg_share, '..')
@@ -84,5 +83,5 @@ def generate_launch_description():
         gazebo,
         spawn_entity,
         bridge,
-        joystick  # <--- Đừng quên thêm dòng này!
+        joystick  
     ])

@@ -6,7 +6,7 @@
   <description>View robot in RViz</description>
   <maintainer email="you@example.com">you</maintainer>
   <license>BSD-3-Clause</license>
-  <author>Khoa_AIot</author>
+  <author>robomango</author>
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
