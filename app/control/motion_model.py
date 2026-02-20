@@ -24,7 +24,7 @@ class GeometricRotationModel:
         return theta
     
     def compute_velocities(self, theta, distance):
-        angular_z = self.config.K_ANG * theta
+        angular_z = -self.config.K_ANG * theta
         angular_z = max(self.config.MIN_ANGULAR_VELOCITY, min(angular_z, self.config.MAX_ANGULAR_VELOCITY))
         
         if abs(theta) < self.config.ANGLE_THRESHOLD and distance > self.config.DESIRED_DISTANCE:
