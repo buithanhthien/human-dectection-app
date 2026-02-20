@@ -31,6 +31,8 @@ setup(
             'odom_frame_publisher = node_pkg.odom_frame_publisher:main',
             'odom_tf_broadcaster = node_pkg.odom_tf_broadcaster:main',
             'my_teleop_node = node_pkg.teleop_node:main',
+            'human_tracking_node = node_pkg.human_tracking_node:main',
+            'real_camera_node = node_pkg.real_camera_node:main',
         ],
     },
 )

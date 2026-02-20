@@ -1,14 +1,22 @@
 class MotionController:
-    def __init__(self, linear_speed=0.3, angular_speed=0.5):
-        self.linear_speed = linear_speed
-        self.angular_speed = angular_speed
+    def __init__(self, config, motion_model):
+        self.config = config
+        self.motion_model = motion_model
         
-    def compute_velocity(self, zone):
-        if zone == "left":
-            return self.linear_speed, -self.angular_speed * 0.3
-        elif zone == "middle":
-            return self.linear_speed, 0.0
-        elif zone == "right":
-            return self.linear_speed, self.angular_speed * 0.3
-        else:
+    def compute_velocity(self, bbox, tracker):
+        if bbox is None:
             return 0.0, 0.0
+        
+        if tracker.check_vertical_violation(bbox):
+            return 0.0, 0.0
+        
+        bbox_center_x, _ = tracker.get_bbox_center(bbox)
+        bbox_height = tracker.get_bbox_height(bbox)
+        
+        delta_px = bbox_center_x - self.config.center_x
+        distance = self.motion_model.estimate_distance(bbox_height)
+        
+        theta = self.motion_model.compute_rotation_angle(delta_px, distance)
+        linear_x, angular_z = self.motion_model.compute_velocities(theta, distance)
+        
+        return linear_x, angular_z

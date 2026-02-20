@@ -5,5 +5,5 @@ class HumanDetector:
         self.model = YOLO(model_path)
 
     def detect(self, frame):
-        results = self.model(frame, classes=[0])
+        results = self.model(frame, classes=[0], verbose=False)
         return results
