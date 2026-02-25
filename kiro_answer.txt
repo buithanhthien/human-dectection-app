@@ -1,0 +1,86 @@
+BYTETRACK MOT EXPLANATION AND APPLICATION
+==========================================
+
+WHAT IS BYTETRACK?
+------------------
+ByteTrack is a Multi-Object Tracking (MOT) algorithm that solves ID switching problems by:
+
+1. Two-Stage Association
+   - High confidence detections (e.g., conf > 0.7) are tracked first
+   - Low confidence detections (e.g., 0.1 < conf < 0.7) are used to recover lost tracks
+   - This prevents losing objects during occlusion or poor detection frames
+
+2. Kalman Filter Motion Prediction
+   - Predicts object position in next frame based on velocity
+   - Handles temporary occlusions by predicting where object should be
+
+3. IoU-Based Matching
+   - Uses Intersection over Union (IoU) between predicted and detected boxes
+   - Assigns detections to existing tracks when IoU is high enough
+
+
+YOUR CURRENT PROBLEM
+--------------------
+Your tracker.py only selects the largest bounding box per frame without maintaining identity across frames. When a person moves or another person appears, the ID can switch because there's no temporal tracking.
+
+
+HOW TO APPLY BYTETRACK TO YOUR PROGRAM
+---------------------------------------
+
+OPTION 1: Use ByteTrack Library
+pip install bytetrack
+
+Modify tracker.py:
+- Import ByteTrack tracker
+- Initialize with frame rate and track buffer parameters
+- Feed detections (bbox, confidence, class) each frame
+- ByteTrack returns tracked objects with persistent IDs
+- Select target based on stable track ID instead of just largest box
+
+
+OPTION 2: Use Supervision Library (Simpler)
+pip install supervision
+
+Supervision wraps ByteTrack with easier API:
+- Import sv.ByteTrack()
+- Call tracker.update_with_detections(detections)
+- Get tracked detections with .tracker_id attribute
+
+
+INTEGRATION STEPS FOR YOUR CODE
+--------------------------------
+
+1. Modify HumanTracker.__init__():
+   - Initialize ByteTrack tracker instance
+   - Set track_thresh=0.5, track_buffer=30, match_thresh=0.8
+
+2. Modify select_target():
+   - Convert YOLO results to ByteTrack format (bbox, conf, cls)
+   - Call tracker.update() to get tracked objects with IDs
+   - Store selected target ID
+   - In subsequent frames, prioritize same ID if still detected
+   - Fall back to largest box if target ID lost
+
+3. Add track_id to return value:
+   - Return (bbox, track_id) instead of just bbox
+   - Use track_id for consistent target following
+
+4. Handle ID persistence:
+   - If target_id exists and still tracked, keep following it
+   - Only switch to new target if current target lost for N frames
+
+
+KEY PARAMETERS TO TUNE
+----------------------
+- track_thresh: Min confidence to start new track (0.5-0.7)
+- track_buffer: Frames to keep lost track alive (30-60)
+- match_thresh: IoU threshold for matching (0.7-0.9)
+- Higher match_thresh = less ID switching but may lose track faster
+
+
+EXPECTED IMPROVEMENT
+--------------------
+- Stable IDs across frames even with detection confidence fluctuations
+- Reduced ID switching when multiple people present
+- Better handling of temporary occlusions
+- Smoother tracking for control system
