@@ -1,2 +1,2 @@
-There is now a problem that if the camera detect a human of the left side of camera frame, robot must rotate right but it now rotates left. 
-and same with human detected on right side of camera frame, robot must rotate left. fix it for me
+inside '/home/thien/human_detection_app/app'
+create .py file allow me to test solution of ID switching problem seperately
