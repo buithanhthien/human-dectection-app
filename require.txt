@@ -1,0 +1,3 @@
+I want to solve the problem ID-switching by using ByteTrack solution.
+Create .py file to detect human using ByteTrack in '/home/thien/human-dectection-app/app' so i can test seperately
+Every change, pause for me to check
