@@ -27,3 +27,5 @@ app/core/__pycache__/*
 # Test results
 **/test_results/
 require.txt
+kiro_answers.txt
+test.txt
